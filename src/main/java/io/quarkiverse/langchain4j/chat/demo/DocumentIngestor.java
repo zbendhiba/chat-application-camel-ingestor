@@ -19,7 +19,7 @@ public class DocumentIngestor extends RouteBuilder {
             .to("langchain4j-embeddings:test")  // Use Langchain4j to generate embeddings
             .transform(new DataType("qdrant:embeddings"))   // Transform the data type to a format suitable for Qdrant using a predefined transformer
             .setHeader(Qdrant.Headers.ACTION, constant(QdrantAction.UPSERT))  // Set the header to perform an UPSERT operation in Qdrant
-            .to("qdrant:camel");  // Send the data to Qdrant
+            .to("qdrant:my-collection");  // Send the data to Qdrant
 
 
     }
