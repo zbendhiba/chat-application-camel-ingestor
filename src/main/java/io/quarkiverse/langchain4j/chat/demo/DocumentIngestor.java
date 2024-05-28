@@ -13,7 +13,7 @@ public class DocumentIngestor extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-        from("aws2-s3://zbendhib-bucket")
+        from("aws2-s3:{{s3.bucket.name}}")
             .log("Incoming message from S3 bucket ${body}")
             .convertBodyTo(String.class)  // Convert the file content to a String
             .to("langchain4j-embeddings:test")  // Use Langchain4j to generate embeddings

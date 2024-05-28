@@ -10,6 +10,17 @@ To run this application, you will need:
 - Docker or Podman installed on your machine, as the application uses Quarkus Dev Services to automatically start a Qdrant Docker image.
 - Maven installed to compile and run the Quarkus application.
 
+## Environment Setup
+
+Before starting the application, you need to set up your AWS environment variables. Open your terminal and export the following variables with your actual AWS credentials:
+
+```bash
+export AWS_ACCESS_KEY="your-access-key-here"
+export AWS_SECRET_KEY="your-secret-key-here"
+export AWS_REGION="your-region-here"  # Example: us-east-1
+export AWS_BUCKET_NAME="your-bucket-name-here"
+```
+
 ## Getting Started
 
 1. **Start the Application in Developer Mode:**
