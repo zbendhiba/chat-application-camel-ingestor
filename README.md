@@ -18,7 +18,7 @@ Before starting the application, you need to set up your AWS environment variabl
 export AWS_ACCESS_KEY="your-access-key-here"
 export AWS_SECRET_KEY="your-secret-key-here"
 export AWS_REGION="your-region-here"  # Example: us-east-1
-export AWS_BUCKET_NAME="your-bucket-name-here"
+export AWS_S3_BUCKET_NAME="your-bucket-name-here"
 ```
 
 ## Getting Started
