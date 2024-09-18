@@ -9,3 +9,8 @@ The "Standard savings account" offers the following benefits:
 * Account alerts: Set up email or text message reminders about low balances, transactions, payments and more
 * Automated savings options: Link your saving accounts to another bank account and set up recurring transfers
 * E-Statements: quickly access your saving account statement online anytime. They are automatically archived and they are free.
+
+*Additional Benefits:**
+* Free savings goal-setting tool online
+* Automated savings options through a linked checking account
+* Access to a network of ATMs worldwide with no fees or surcharges
