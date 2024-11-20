@@ -12,7 +12,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
         <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
-        <quarkus.platform.version>3.14.4</quarkus.platform.version>
+        <quarkus.platform.version>3.16.3</quarkus.platform.version>
         <skipITs>true</skipITs>
         <surefire-plugin.version>3.3.1</surefire-plugin.version>
     </properties>
@@ -26,13 +26,14 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <dependency>
+           <dependency>
                 <groupId>${quarkus.platform.group-id}</groupId>
                 <artifactId>quarkus-camel-bom</artifactId>
                 <version>${quarkus.platform.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -44,12 +45,12 @@
         <dependency>
             <groupId>io.quarkiverse.langchain4j</groupId>
             <artifactId>quarkus-langchain4j-openai</artifactId>
-            <version>0.17.2</version>
+            <version>0.21.0</version>
         </dependency>
         <dependency>
             <groupId>io.quarkiverse.langchain4j</groupId>
             <artifactId>quarkus-langchain4j-qdrant</artifactId>
-            <version>0.17.2</version>
+            <version>0.21.0</version>
         </dependency>
         <dependency>
             <groupId>org.apache.camel.quarkus</groupId>
@@ -57,7 +58,15 @@
         </dependency>
         <dependency>
             <groupId>org.apache.camel.quarkus</groupId>
+            <artifactId>camel-quarkus-direct</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel.quarkus</groupId>
             <artifactId>camel-quarkus-langchain4j-embeddings</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel.quarkus</groupId>
+            <artifactId>camel-quarkus-langchain4j-tokenizer</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.camel.quarkus</groupId>
