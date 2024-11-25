@@ -5,7 +5,7 @@ import dev.langchain4j.model.embedding.EmbeddingModel;
 import dev.langchain4j.rag.DefaultRetrievalAugmentor;
 import dev.langchain4j.rag.RetrievalAugmentor;
 import dev.langchain4j.rag.content.retriever.EmbeddingStoreContentRetriever;
-import dev.langchain4j.store.embedding.qdrant.QdrantEmbeddingStore;
+import io.quarkiverse.langchain4j.pinecone.PineconeEmbeddingStore;
 import jakarta.enterprise.context.ApplicationScoped;
 
 
@@ -16,7 +16,7 @@ public class DocumentRetriever implements Supplier<RetrievalAugmentor> {
 
     private final RetrievalAugmentor augmentor;
 
-    DocumentRetriever(QdrantEmbeddingStore store, EmbeddingModel model) {
+    DocumentRetriever(PineconeEmbeddingStore store, EmbeddingModel model) {
         EmbeddingStoreContentRetriever contentRetriever = EmbeddingStoreContentRetriever.builder()
             .embeddingModel(model)
             .embeddingStore(store)

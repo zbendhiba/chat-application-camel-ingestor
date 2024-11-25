@@ -4,6 +4,7 @@ import io.smallrye.mutiny.infrastructure.Infrastructure;
 import jakarta.inject.Inject;
 import jakarta.websocket.*;
 import jakarta.websocket.server.ServerEndpoint;
+import org.apache.camel.ProducerTemplate;
 
 import java.io.IOException;
 
@@ -15,6 +16,9 @@ public class ChatBotWebSocket {
 
     @Inject
     ChatMemoryBean chatMemoryBean;
+
+    @Inject
+    ProducerTemplate producerTemplate;
 
     @OnClose
     void onClose(Session session) {
@@ -31,7 +35,8 @@ public class ChatBotWebSocket {
         }
         final var msg = message;
         Infrastructure.getDefaultExecutor().execute(() -> {
-            String response = chat.chat(session, msg);
+           // String response = chat.chat(session, msg);
+            String response = producerTemplate.requestBody("direct:answerQuestion", msg, String.class);
             try {
                 session.getBasicRemote().sendText(response);
             } catch (IOException e) {
